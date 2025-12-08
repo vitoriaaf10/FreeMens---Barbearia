@@ -1,4 +1,5 @@
 <?php
+echo "<h1>ESTOU NA VERSÃO NOVA</h1>"; exit;
 session_start();
 include 'conexao.php'; 
 
