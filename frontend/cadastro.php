@@ -42,7 +42,7 @@ if (isset($_SESSION['erro_cadastro'])) {
     
     <aside class="sidebar">
         <div class="logo-section">
-            <img src="../imagens/logo.png" alt="Logo Free Men's Barbearia" class="logo-img">
+            <img src="src/imagens/logo.png" alt="Logo Free Men's Barbearia" class="logo-img">
         </div>
 
         <ul class="nav-menu">
@@ -98,7 +98,7 @@ if (isset($_SESSION['erro_cadastro'])) {
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email">
             </div>
-            
+
             <div class="submit-container">
                 <button type="submit">Salvar</button>
             </div>

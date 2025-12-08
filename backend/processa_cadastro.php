@@ -59,7 +59,9 @@ try {
 
 } catch(PDOException $e) {
     
-    error_log("Erro PDO no cadastro: " . $e->getMessage()); 
+    //error_log("Erro PDO no cadastro: " . $e->getMessage()); 
+
+    die("Erro no Banco de Dados: " . $e->getMessage());
 
     $_SESSION['erro_cadastro'] = "Erro interno: Não foi possível processar o cadastro.";
     
