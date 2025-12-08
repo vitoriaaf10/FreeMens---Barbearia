@@ -1,25 +1,23 @@
 <?php
-
 session_start();
-
 include 'conexao.php'; 
 
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: ../frontend/cadastro.php");
     exit();
 }
 
-
 try {
+
     $nome_completo = trim($_POST['nome_completo'] ?? '');
-    $sexo = trim($_POST['sexo'] ?? '');
-    $cpf = trim($_POST['cpf'] ?? '');
-    $celular = trim($_POST['celular'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $observacao = trim($_POST['observacao'] ?? '');
-    
-    $idade = !empty($_POST['idade']) ? (int)$_POST['idade'] : null;
+    $sexo          = trim($_POST['sexo'] ?? '');
+    $cpf           = trim($_POST['cpf'] ?? '');
+    $celular       = trim($_POST['celular'] ?? '');
+    $email         = trim($_POST['email'] ?? '');
+    $observacao    = trim($_POST['observacao'] ?? '');
+    $idade         = !empty($_POST['idade']) ? (int)$_POST['idade'] : null;
 
     if (empty($nome_completo) || empty($celular)) {
         $_SESSION['erro_cadastro'] = "Nome e Celular são campos obrigatórios.";
@@ -33,40 +31,23 @@ try {
     
     $stmt = $conn->prepare($sql);
 
-    $stmt->bindParam(':nome_completo', $nome_completo);
-    $stmt->bindParam(':sexo', $sexo);
-    $stmt->bindParam(':cpf', $cpf);
-    
-    $stmt->bindValue(':idade', $idade, PDO::PARAM_INT); 
-    
-    $stmt->bindParam(':celular', $celular);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':observacao', $observacao);
+    $stmt->bindValue(':nome_completo', $nome_completo);
+    $stmt->bindValue(':sexo', $sexo);
+    $stmt->bindValue(':cpf', $cpf);
+    $stmt->bindValue(':idade', $idade, $idade === null ? PDO::PARAM_NULL : PDO::PARAM_INT); 
+    $stmt->bindValue(':celular', $celular);
+    $stmt->bindValue(':email', $email);
+    $stmt->bindValue(':observacao', $observacao);
 
-    if ($stmt->execute()) {
-        
-        $_SESSION['sucesso_cadastro'] = "Cliente cadastrado com sucesso!";
-        
-        header("Location: ../frontend/painel.php"); 
-        exit();
+    $stmt->execute();
 
-    } else {
-     
-        $_SESSION['erro_cadastro'] = "Erro ao cadastrar: Verifique a validade dos dados (ex: CPF/Email duplicados).";
-        header("Location: ../frontend/cadastro.php"); 
-        exit();
-    }
+    $_SESSION['sucesso_cadastro'] = "Cliente cadastrado com sucesso!";
+    header("Location: ../frontend/painel.php"); 
+    exit();
 
 } catch(PDOException $e) {
-    
-    //error_log("Erro PDO no cadastro: " . $e->getMessage()); 
-
-    die("Erro no Banco de Dados: " . $e->getMessage());
-
-    $_SESSION['erro_cadastro'] = "Erro interno: Não foi possível processar o cadastro.";
-    
-    header("Location: ../frontend/cadastro.php");
-    exit();
+    die("ERRO DE BANCO DE DADOS: " . $e->getMessage());
+} catch(Exception $e) {
+    die("ERRO GERAL: " . $e->getMessage());
 }
-
 ?>
