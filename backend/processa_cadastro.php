@@ -27,7 +27,7 @@ try {
         exit();
     }
 
-    $sql = "INSERT INTO clientes 
+    $sql = "INSERT INTO usuarios 
             (nome_completo, sexo, cpf, idade, celular, email, observacao) 
             VALUES (:nome_completo, :sexo, :cpf, :idade, :celular, :email, :observacao)";
     
