@@ -14,11 +14,6 @@
         </div>
     <?php endif; ?>
 
-    <?php if (!empty($mensagem_erro)): ?>
-        <div style="background: #f8d7da; color: #721c24; padding: 10px; margin: 10px;">
-            <strong>Erro!</strong> <?php echo htmlspecialchars($mensagem_erro); ?>
-        </div>
-    <?php endif; ?>
     
     <aside class="sidebar">
         <div class="logo-section" style="text-align: center; padding: 20px;">
