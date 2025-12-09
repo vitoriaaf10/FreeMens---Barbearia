@@ -20,7 +20,7 @@ try {
             $_SESSION['nome']       = $usuario['nome_completo'];
 
             
-            header("Location: ../frontend/painel.php"); 
+            header("Location: ../frontend/agendamentos.php"); 
             exit();
 
         } else {
