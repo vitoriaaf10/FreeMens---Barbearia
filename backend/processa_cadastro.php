@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 try {
-
+    return 'teste';
     $nome_completo = trim($_POST['nome_completo'] ?? '');
     $sexo          = trim($_POST['sexo'] ?? '');
     $cpf           = trim($_POST['cpf'] ?? '');
