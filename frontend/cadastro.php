@@ -1,40 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Free Men's Barbearia</title>
-    <link rel="stylesheet" href="css/style.css"> 
+    <title>Free Men's Barbearia - Cadastro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    
-    <?php if (!empty($mensagem_sucesso)): ?>
-        <div style="background: #d4edda; color: #155724; padding: 10px; margin: 10px;">
-            <strong>Sucesso!</strong> <?php echo htmlspecialchars($mensagem_sucesso); ?>
-        </div>
-    <?php endif; ?>
 
-    <?php if (!empty($mensagem_erro)): ?>
-        <div style="background: #f8d7da; color: #721c24; padding: 10px; margin: 10px;">
-            <strong>Erro!</strong> <?php echo htmlspecialchars($mensagem_erro); ?>
-        </div>
-    <?php endif; ?>
-    
     <aside class="sidebar">
-        <div class="logo-section" style="text-align: center; padding: 20px;">
-            <img src="imagens/logo.png" alt="Logo" style="width: 120px; height: auto; display: block; margin: 0 auto;">
-            <h2 style="font-size: 14px; margin-top: 10px;">FREE MEN'S</h2>
-            <h3 style="font-size: 12px;">BARBEARIA</h3>
+        <div class="logo-area">
+            <div class="logo-symbol">FM</div>
+            <div class="logo-text">FREE MEN'S</div>
+            <div class="logo-sub"><i class="fas fa-scissors"></i> BARBEARIA</div>
         </div>
 
-        <ul class="nav-menu">
-            <li><a href="#perfil">Meu perfil</a></li>
-            <li><a href="#agendamentos">Agendamentos</a></li>
-            <li><a href="#calendario">Calendário</a></li>
-        </ul>
-    </aside>
+        <nav>
+            <ul class="menu">
+                <li><a href="#"><i class="fas fa-user-circle"></i> Meu perfil</a></li>
+                <li><a href="#"><i class="fas fa-book-open"></i> Agendamentos</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+            </ul>
+        </nav>
 
-    <main class="main-content"> 
-        </main>
+        <div class="sidebar-footer">
+            <i class="fas fa-bars"></i>
+        </div>
+    </aside> 
+
+    <main class="main-content">
+        <div class="header-title">
+            <i class="fas fa-user-plus"></i> Cadastro
+        </div>
+
+        <form class="form-container">
+            <div class="form-group">
+                <label>Nome completo:</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Sexo:</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>CPF:</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Idade:</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Celular:</label>
+                <input type="text">
+            </div>
+
+            <div class="form-group" style="grid-row: span 2;">
+                <label>Observação para barbeiro:</label>
+                <textarea></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>E-mail:</label>
+                <input type="email">
+            </div>
+
+            <div class="btn-container">
+                <button type="submit" class="btn-save">Salvar</button>
+            </div>
+        </form>
+    </main>
+
 </body>
 </html>
