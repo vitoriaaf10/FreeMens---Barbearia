@@ -30,18 +30,18 @@ if (isset($_SESSION['sucesso_cadastro'])) {
 <body>
 
     <aside class="sidebar">
-        <div class="logo-area">
-            <div class="logo-symbol">FM</div>
-            <div class="logo-text">FREE MEN'S</div>
-            <div class="logo-sub"><i class="fas fa-scissors"></i> BARBEARIA</div>
+        <div class="logo_buttons">
+            <div class="logo-area">
+                <img src="/imagens/logo.png"/>
+            </div>
+    
+            <nav>
+                <ul class="menu">
+                    <li><a href="cadastro.php" class="active"><i class="fas fa-user-plus"></i> Cadastro</a></li>
+                    <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav>
-            <ul class="menu">
-                <li><a href="cadastro.php" class="active"><i class="fas fa-user-plus"></i> Cadastro</a></li>
-                <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-            </ul>
-        </nav>
 
         <div class="sidebar-footer">
             <i class="fas fa-bars"></i>
@@ -108,8 +108,7 @@ if (isset($_SESSION['sucesso_cadastro'])) {
             </div>
 
             <div class="btn-container">
-                <button type="submit" class="btn-save">Cadastrar</button>
-                <a href="login.php" class="btn-secondary">Já tenho conta</a>
+                <button type="submit" class="btn-save">Salvar</button>
             </div>
         </form>
     </main>

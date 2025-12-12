@@ -157,6 +157,12 @@ body:not(.login-body) {
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.3);
 }
 
+.logo_button{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
 .logo-area {
     padding: 35px 20px;
     text-align: center;
@@ -167,18 +173,9 @@ body:not(.login-body) {
     border-bottom: 3px solid var(--gold-primary);
 }
 
-.logo-symbol {
-    font-size: 64px;
-    font-weight: bold;
-    color: var(--black-primary);
-    line-height: 1;
-    margin-bottom: 8px;
-    font-family: 'Georgia', serif;
-    border: 3px solid var(--black-primary);
-    padding: 8px 20px;
-    border-radius: 8px;
-    background: var(--white);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.logo-area img{
+    width: 150px;
+    object-fit: contain;
 }
 
 .logo-text {

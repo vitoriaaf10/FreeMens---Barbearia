@@ -21,11 +21,7 @@ $nome_usuario = isset($_SESSION['nome']) ? $_SESSION['nome'] : 'Usuário';
 <body>
     <aside class="sidebar">
         <div class="logo-area">
-            <div class="logo-symbol">FM</div>
-            <div class="logo-text">FREE MEN'S</div>
-            <div class="logo-sub">
-                <i class="fa-solid fa-scissors"></i> BARBEARIA
-            </div>
+            <img src="/imagens/logo.png"/>
         </div>
 
         <ul class="menu">
